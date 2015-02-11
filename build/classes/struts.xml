@@ -1,0 +1,29 @@
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="StrutsLog" namespace="/" extends="struts-default">
+		<action name= "Registro" class="ttps.Registro"> 
+			<result name="success" > /index.jsp </result> 
+			<result name="input" > /vistaRegistro.jsp </result>
+			
+		</action>
+		<action name= "AltaEvento" class="ttps.AltaEvento"> 
+			<result name="success" > /backend.jsp </result> 
+			<result name="input" > /altaEvento.jsp </result>
+		</action>
+		<action name="Login" class="ttps.Login">
+			<result name="administrador">/backend.jsp</result>
+			<result name="usuario">/backendViajero.jsp</result>
+			<result name="input">/VistaLogin.jsp</result>
+			<result name="conectado">/backend.jsp</result>
+		</action>
+		<action name= "salir" class="ttps.salir"> 
+			<result name="success" > /index.jsp </result> 
+		</action>
+	</package>
+	<package name="default" extends="struts-default,json-default" namespace="/">
+		<action name="DatosTablaAction" class="ttps.DatosTablaAction"> 
+			<result name="success" type="json" /> 
+		</action>
+	</package>
+</struts>
